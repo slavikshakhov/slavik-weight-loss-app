@@ -1,0 +1,18 @@
+table {
+  margin: 2rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 600px) {
+  table {
+    margin: 0;
+    width: 100%;
+  }
+}
+.warning {
+  background-color: Tomato;
+}
+.praise {
+  background-color: #66ff99;
+}

@@ -1,0 +1,194 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center">
+  <div class="" fxFlex fxLayout fxLayoutAlign="center">
+    <button
+      class="icon icon-top"
+      (click)="openDialog('walking', data.walking.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="primary"
+        class="pic"
+      >
+        directions_walk
+      </mat-icon>
+    </button>
+  </div>
+  <div class="" fxFlex fxLayout fxLayoutAlign="space-between">
+    <button
+      class="icon icon-left1"
+      (click)="openDialog('breakfast', data.breakfast.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="accent"
+        class="pic"
+      >
+        free_breakfast
+      </mat-icon>
+    </button>
+
+    <button
+      class="icon icon-right1"
+      (click)="openDialog('jogging', data.jogging.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="primary"
+        class="pic"
+      >
+        directions_run
+      </mat-icon>
+    </button>
+  </div>
+  <div class="" fxFlex fxLayout fxLayoutAlign="space-between">
+    <button
+      class="icon icon-left2"
+      (click)="openDialog('lunch', data.lunch.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="accent"
+        class="pic"
+      >
+        local_dining
+      </mat-icon>
+    </button>
+
+    <button
+      class="icon icon-right2"
+      (click)="openDialog('weightlifting', data.weightlifting.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="primary"
+        class="pic"
+      >
+        fitness_center
+      </mat-icon>
+    </button>
+  </div>
+  <div class="" fxFlex fxLayout fxLayoutAlign="space-between">
+    <button class="icon" (click)="openDialog('dinner', data.dinner.message)">
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="accent"
+        class="pic"
+      >
+        set_meal
+      </mat-icon>
+    </button>
+
+    <button
+      class="icon"
+      (click)="openDialog('swimming', data.swimming.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="primary"
+        class="pic"
+      >
+        pool
+      </mat-icon>
+    </button>
+  </div>
+  <div class="" fxFlex fxLayout fxLayoutAlign="space-between">
+    <button
+      class="icon icon-left2"
+      (click)="openDialog('snack', data.snack.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="accent"
+        class="pic"
+      >
+        fastfood
+      </mat-icon>
+    </button>
+
+    <button
+      class="icon icon-right2"
+      (click)="openDialog('stairclimbing', data.stairclimbing.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="primary"
+        class="pic"
+      >
+        stairs
+      </mat-icon>
+    </button>
+  </div>
+  <div class="" fxFlex fxLayout fxLayoutAlign="space-between">
+    <button
+      class="icon icon-left1"
+      (click)="openDialog('alcohol', data.alcohol.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="accent"
+        class="pic"
+      >
+        local_bar
+      </mat-icon>
+    </button>
+
+    <button
+      class="icon icon-right1"
+      (click)="openDialog('teamgame', data.teamsprort.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="primary"
+        class="pic"
+      >
+        sports_tennis
+      </mat-icon>
+    </button>
+  </div>
+  <div class="" fxFlex fxLayout fxLayoutAlign="center">
+    <button
+      class="icon icon-bottom"
+      (click)="openDialog('hiking', data.hiking.message)"
+    >
+      <mat-icon
+        fxLayout
+        fxLayoutAlign="center center"
+        color="primary"
+        class="pic"
+      >
+        landscape
+      </mat-icon>
+    </button>
+  </div>
+  <div
+    class="center"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="2rem"
+  >
+    <h2 class="md-display-3" color="primary">Today</h2>
+    <h2 class="">
+      <span
+        class="grams"
+        [ngClass]="{ lost: balance < 0, gained: balance > 0 }"
+        >{{ fatChange }}</span
+      >
+      grams of fat
+    </h2>
+    <div [ngClass]="{ lost: balance < 0, gained: balance > 0 }">
+      <h2 *ngIf="balance > 0" class="">gained</h2>
+      <h2 *ngIf="balance < 0" class="">lost</h2>
+    </div>
+  </div>
+</div>

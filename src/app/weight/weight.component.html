@@ -1,0 +1,42 @@
+<section fxLayout fxLayoutAlign="center">
+  <mat-card
+    class="card-container"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
+    <mat-card-title class="weight-title">Update Your Weight</mat-card-title>
+
+    <mat-card-content>
+      <form
+        fxLayout
+        fxLayoutAlign="center center"
+        fxLayoutGap="2.5rem"
+        #f="ngForm"
+        (ngSubmit)="onSubmit(f)"
+      >
+        <div fxLayout="column" fxLayoutGap="1rem">
+          <mat-form-field class="">
+            <input
+              class="weight-input"
+              type="number"
+              matInput
+              [(ngModel)]="weight"
+              #weightInput="ngModel"
+              name="weight"
+            />
+          </mat-form-field>
+
+          <button
+            color="primary"
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="f.invalid"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

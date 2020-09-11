@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a *ngIf="!isAuth" routerLink="/how">ABOUT</a>
+    <a *ngIf="isAuth" routerLink="/">HOME</a>
+  </div>
+  <div
+    class=""
+    *ngIf="!isAuth"
+    fxFlex="auto"
+    fxLayout
+    fxLayoutAlign="center center"
+    fxHide.xs
+  >
+    <ul fxLayout fxLayoutGap="3rem" class="navigation-items">
+      <li>
+        <a routerLink="/how">How It Works</a>
+      </li>
+    </ul>
+  </div>
+
+  <div
+    *ngIf="isAuth"
+    fxFlex="auto"
+    fxLayout
+    fxLayoutAlign="center center"
+    fxHide.xs
+  >
+    <ul fxLayout fxLayoutGap="2rem" class="navigation-items">
+      <li>
+        <a routerLink="/statistics">History</a>
+      </li>
+      <li>
+        <a routerLink="/goals">Goals</a>
+      </li>
+      <li>
+        <a routerLink="/weight"> WEIGHT </a>
+      </li>
+    </ul>
+  </div>
+  <div fxFlex.xs="auto"></div>
+  <div class="" fxLayout fxLayoutAlign="end center">
+    <ul *ngIf="!isAuth" fxLayout fxLayoutGap="2rem" class="navigation-items">
+      <li>
+        <a routerLink="/signup">Signup</a>
+      </li>
+      <li>
+        <a routerLink="/login">Login</a>
+      </li>
+    </ul>
+    <div class="" *ngIf="isAuth">
+      <a href="" (click)="authService.logout()">Logout</a>
+    </div>
+  </div>
+  <div></div>
+</mat-toolbar>

@@ -1,0 +1,17 @@
+.card-container {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #ffe4e1;
+}
+.right-radio-btn {
+  padding-left: 1.5rem;
+}
+.height-weight-label {
+  padding-right: 1rem;
+}
+.biometrics-heading {
+  padding-bottom: 1.2rem;
+}
+.body-info-button {
+  padding: 1rem;
+}

@@ -1,0 +1,22 @@
+.home {
+  position: relative;
+}
+
+.component {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+
+  animation-duration: 2s;
+  animation-name: expand;
+  animation-fill-mode: forwards;
+}
+@keyframes expand {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}

@@ -1,0 +1,145 @@
+<mat-card today-progress-card fxFlex="auto">
+  <mat-card-title>My Progress Today</mat-card-title>
+  <mat-card-subtitle
+    ><span>{{ todayDate }}</span></mat-card-subtitle
+  >
+
+  <mat-card-content>
+    <div class="" fxLayout fxLayoutAlign="space-between center">
+      <p class="name" fxFlex="50%">Current Weight:</p>
+      <p fxFlex="50%">
+        <span *ngIf="metrics" class="static">{{ metrics.weight }}</span>
+        kg
+        <span *ngIf="!metrics">No Weight provided</span>
+      </p>
+    </div>
+    <div class="" fxLayout fxLayoutAlign="space-between center">
+      <p class="name" fxFlex="50%">My goal:</p>
+      <p fxFlex="50%">
+        <span class="static">{{ goal }}</span>
+        kg/week
+      </p>
+    </div>
+    <div class="" fxLayout fxLayoutAlign="space-between center">
+      <div class="name" fxFlex="50%">
+        <div class="bmr">
+          <span class="bmr-text">BMR</span>
+          <div class="bmr">
+            <mat-icon>help_outline</mat-icon>
+
+            <div class="bmr-popup bmr-popup-right">
+              <p>{{ bmrPopupText }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p fxFlex="50%">
+        <span *ngIf="basalMetabolicRate" class="static">{{
+          basalMetabolicRate
+        }}</span>
+        kcal/day
+        <span *ngIf="!basalMetabolicRate">Not available</span>
+      </p>
+    </div>
+    <div class="" fxLayout fxLayoutAlign="space-between center">
+      <div class="name" fxFlex="50%">
+        by <span> {{ getTimeNow() }}</span> burned due to<span class="bmr-text">
+          BMR</span
+        >
+      </div>
+
+      <p *ngIf="basalMetabolicRate" fxFlex="50%">
+        <span class="lost">{{ lostByBasalMetabolicRateByThisHour() }} </span>
+        kcal/day
+      </p>
+      <p *ngIf="!basalMetabolicRate">Not available</p>
+    </div>
+
+    <div class="" fxLayout fxLayoutAlign="space-between center">
+      <p class="name" fxFlex="50%">Total calories lost by activities</p>
+      <p fxFlex="50%">
+        <span class="lost">{{ burnedCalories }}</span> kcals
+      </p>
+    </div>
+    <div class="" fxLayout fxLayoutAlign="space-between center">
+      <p class="name" fxFlex="50%">Total calories lost</p>
+      <div fxFlex="50%" fxLayout="column">
+        <div>
+          <span class="lost">{{ burnedCalories }}</span> kcals by activities
+          <span class="static"> + </span>
+        </div>
+        <div>
+          <span class="lost">{{ lostByBasalMetabolicRateByThisHour() }}</span>
+          kcals by <span class="bmr-text"> BMR</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="" fxLayout fxLayoutAlign="space-between center">
+      <p class="name" fxFlex="50%">
+        Total calories consumed with food and drinks
+      </p>
+      <p fxFlex="50%">
+        <span class="gained">{{ gainedCalories }}</span>
+        kcals
+      </p>
+    </div>
+
+    <mat-card-title class="summery-title">Summery</mat-card-title>
+    <div class="">
+      <p>
+        <span class="gained">{{ gainedCalories }}</span> kcals -
+        <span class="lost">{{ burnedCalories }}</span> kcals -
+        <span class="lost">{{ lostByBasalMetabolicRateByThisHour() }}</span>
+        kcals > =
+        <span class="result">{{
+          gainedCalories - burnedCalories - lostByBasalMetabolicRateByThisHour()
+            | number: "1.0-0"
+        }}</span>
+        kcal
+      </p>
+    </div>
+    <h3 class="goal-message">
+      To lose
+      <span>{{ goal }}</span>
+      kg per week, your need to have
+      <span>{{ convertFatToCalories(goal * 1000) / 7 }}</span>
+      kcals deficit daily
+    </h3>
+
+    <h4
+      class="summery"
+      [ngClass]="{
+        'blue-summery': !positiveBalance,
+        'red-summery': positiveBalance
+      }"
+    >
+      So far you
+
+      <span [ngClass]="{ lost: balance < 0, gained: balance > 0 }">
+        {{ lostOrGained() }}</span
+      >
+
+      &nbsp;
+      <span [ngClass]="{ lost: balance < 0, gained: balance > 0 }">{{
+        totalBalance()
+      }}</span>
+      kcal or
+      <span [ngClass]="{ lost: balance < 0, gained: balance > 0 }">{{
+        convertCaloriesToFat(totalBalance())
+      }}</span>
+      grams of body fat today
+    </h4>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      routerLink="/statistics"
+      class="progress-history-btn"
+      mat-stroked-button
+      color="primary"
+      fxFlex="auto"
+    >
+      Check progress history
+    </button>
+  </mat-card-actions>
+</mat-card>

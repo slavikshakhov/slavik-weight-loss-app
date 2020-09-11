@@ -1,0 +1,93 @@
+.today-progress-card {
+}
+mat-card-title,
+mat-card-subtitle {
+  text-align: center;
+}
+
+span {
+  font-weight: 500;
+}
+mat-card-subtitle {
+  margin-top: 1rem;
+}
+.name {
+  font-size: 0.8rem;
+}
+.summery-title {
+  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.blue-summery {
+  background-color: #85c1e9;
+}
+.red-summery {
+  background-color: #f4a3a3;
+}
+.green-summery {
+  background-color: #bee554;
+}
+.summery {
+  padding: 1rem;
+}
+.progress-history-btn {
+  text-transform: uppercase;
+}
+.goal-message {
+  text-align: center;
+}
+.result {
+  font-size: 1rem;
+  font-weight: 500;
+  color: red;
+}
+.lost {
+  font-size: 1rem;
+  color: green;
+  font-weight: 500;
+}
+.gained {
+  font-size: 1rem;
+  color: red;
+  font-weight: 500;
+}
+.static {
+  font-size: 1rem;
+  color: black;
+  font-weight: 500;
+}
+.bmr {
+  display: inline-block;
+  position: relative;
+}
+.bmr-text {
+  color: darkslategray;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.bmr-popup {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 10px;
+  background-color: pink;
+  z-index: 100;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.bmr-popup-right {
+  top: 1rem;
+  left: 1rem;
+}
+.bmr-popup-left {
+  top: 1rem;
+  right: 1rem;
+}
+
+.bmr:hover .bmr-popup {
+  opacity: 1;
+  width: 15rem;
+  height: auto;
+  padding: 1rem;
+}

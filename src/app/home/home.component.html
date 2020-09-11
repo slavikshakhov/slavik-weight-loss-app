@@ -1,0 +1,7 @@
+<div class="container">
+  <section class="home">
+    <app-body-info class="component" *ngIf="!profileFilled"></app-body-info>
+    <app-goals class="component" *ngIf="profileFilled && !goalsSet"></app-goals>
+    <app-today *ngIf="profileFilled && goalsSet"></app-today>
+  </section>
+</div>

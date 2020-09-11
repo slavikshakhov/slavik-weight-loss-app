@@ -1,0 +1,15 @@
+.card-container {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #ffe4e1;
+}
+
+.weight-title {
+  padding-bottom: 1.2rem;
+}
+mat-form-field {
+  width: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,51 @@
+<section fxLayout fxLayoutAlign="center">
+  <mat-card class="card-container" fxLayout="column">
+    <mat-card-title class="goals-title">Goals</mat-card-title>
+    <mat-card-subtitle>
+      Set goal of weight loss per week
+    </mat-card-subtitle>
+    <mat-card-content>
+      <form
+        fxLayout="column"
+        fxLayoutGap="1rem"
+        #f="ngForm"
+        (ngSubmit)="onSubmit(f)"
+      >
+        <mat-form-field>
+          <mat-select
+            ngModel
+            name="goal"
+            placeholder="kilograms per week"
+            required
+          >
+            <mat-option *ngFor="let goal of goals" [value]="goal.field">
+              {{ goal.value }}
+              <span>Kg</span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="" fxLayout fxLayoutGap="0.3rem" fxFlex="auto">
+          <button
+            fxFlex
+            class="goals-btn"
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="f.invalid"
+          >
+            Submit
+          </button>
+          <button
+            fxFlex
+            class="goals-btn"
+            mat-raised-button
+            color="warn"
+            (click)="closeBlock()"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

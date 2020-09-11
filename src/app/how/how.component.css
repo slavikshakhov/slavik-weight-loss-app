@@ -1,0 +1,27 @@
+.how-section {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  padding-top: 1rem;
+}
+
+.video {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 600px) {
+  .video {
+    width: 300px;
+  }
+  .how-section {
+    padding: 0 !important;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .video {
+    width: 600px;
+  }
+}

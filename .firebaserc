@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "weight-loss-app-146e6": {
+      "hosting": {
+        "slavik-weight-loss-tracker": [
+          "weight-loss-app-146e6"
+        ]
+      }
+    }
+  }
+}

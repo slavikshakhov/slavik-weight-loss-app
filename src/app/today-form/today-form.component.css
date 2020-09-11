@@ -1,0 +1,77 @@
+.container {
+  width: 32rem;
+  height: 32rem;
+  position: relative;
+}
+.icon {
+  height: 4rem;
+  width: 4rem;
+  background-color: lightgray;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+}
+.icon-left1 {
+  margin-left: 7.7rem;
+}
+.icon-right1 {
+  margin-right: 7.7rem;
+}
+.icon-left2 {
+  margin-left: 3rem;
+}
+.icon-right2 {
+  margin-right: 3rem;
+}
+
+mat-icon {
+  font-size: 40px;
+}
+.center {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightgray;
+  overflow: hidden;
+}
+.lost {
+  color: green;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.gained {
+  color: red;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.grams {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .center {
+    width: 12rem;
+    height: 12rem;
+  }
+  .icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  mat-icon {
+    font-size: 30px;
+  }
+  .icon-top {
+    transform: translateY(1rem);
+  }
+  .icon-bottom {
+    transform: translateY(-1rem);
+  }
+}
