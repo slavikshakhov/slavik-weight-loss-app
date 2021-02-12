@@ -109,7 +109,7 @@ export class TodayFormComponent implements OnInit {
       calories: 0, // equal to value of calories given by user
     },
   };
-  field: any;
+  field: number;
   burned = 0;
 
   constructor(
@@ -146,14 +146,16 @@ export class TodayFormComponent implements OnInit {
           // tslint:disable-next-line: radix
           result = parseInt(result);
           console.log(result * this.data[k].calories);
-          //this.field = Number(result);
-          const caloriesGainedOrBurned =
+          let caloriesGainedOrBurned =
             this.data[k].type === 'activity'
               ? result * this.data[k].calories
               : result;
+          caloriesGainedOrBurned = Number.isNaN(caloriesGainedOrBurned)
+            ? 0
+            : caloriesGainedOrBurned;
+          console.log(caloriesGainedOrBurned);
           this.data[k] = {
             ...this.data[k],
-            //value: this.field,
             calories: caloriesGainedOrBurned,
           };
 

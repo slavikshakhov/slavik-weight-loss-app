@@ -36,6 +36,9 @@ export class DataService {
     //firebaseAuth.authState.subscribe((res) => (this.userId = res.uid));
   }
   setBurnedCalories(calories) {
+    if(calories === ''){
+      this.burnedCalories.next(0);
+    }
     this.burnedCalories.next(calories);
   }
   setGainedCalories(calories) {

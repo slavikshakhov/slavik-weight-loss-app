@@ -1,7 +1,7 @@
 <div mat-dialog-content>
   <p>{{ data.message }}</p>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.field" />
+    <input type="number" required matInput [(ngModel)]="data.field" />
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
